@@ -1,0 +1,8 @@
+{
+    "name": "Test Repo",
+    "description": "Cloudx Repository",
+    "manifestVersion": 25,
+    "pluginLists": [
+      "https://raw.githubusercontent.com/b4byhuey/TestPlugins/builds/plugins.json"
+    ]
+}

@@ -189,7 +189,7 @@ open class ExampleProvider : MainAPI() {
                             "action" to "player_ajax",
                             "post" to dataPost,
                             "nume" to dataNume,
-                            "type" to dataType
+                            "type" to dataType,
 							"value" to dataValue
                         ),
                         referer = data,

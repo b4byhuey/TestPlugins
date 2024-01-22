@@ -24,7 +24,7 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
 
 open class ExampleProvider : MainAPI() {
-    override var mainUrl = https://anichin.icu
+    override var mainUrl = "https://anichin.icu"
     override var name = "AniChin"
     override val hasQuickSearch = false
     override val hasMainPage = true
@@ -181,7 +181,7 @@ open class ExampleProvider : MainAPI() {
                     val dataPost = it.attr("data-post")
                     val dataNume = it.attr("data-nume")
                     val dataType = it.attr("data-type")
-					val dataValue = fixUrl(Jsoup.parse(base64Decode(it.attr("value")))
+					val dataValue = fixUrl(Jsoup.parse(base64Decode(it.attr("value"))))
 
                     val iframe = app.post(
                         url = "$mainUrl/wp-admin/admin-ajax.php",
@@ -196,7 +196,7 @@ open class ExampleProvider : MainAPI() {
                         headers = mapOf("X-Requested-With" to "XMLHttpRequest")
                     ).document.select("iframe").attr("src")
 
-                    loadFixedExtractor(fixedIframe(iframe), it.text(), "$mainUrl/", subtitleCallback, callback)
+                    loadFixedExtractor((iframe), it.text(), "$mainUrl/", subtitleCallback, callback)
 
                 }
             }            
